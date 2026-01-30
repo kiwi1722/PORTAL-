@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ITI पंढरपूर - अधिकृत ट्रेड माहिती पोर्टल</title>
+    <style>
+        :root {
+            --primary: #003366;
+            --secondary: #ffcc00;
+            --info-bg: #e3f2fd;
+            --scope-bg: #fff3e0;
+            --doc-bg: #f3e5f5;
+            --contact-bg: #e8f5e9;
+            --video-bg: #fafafa;
+        }
+
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; display: flex; flex-direction: column; background: #f4f7f6; color: #2c3e50; }
+        
+        header { 
+            background: var(--primary); color: white; padding: 25px; text-align: center;
+            border-bottom: 5px solid var(--secondary); box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+
+        .main-container { display: flex; flex: 1; height: calc(100vh - 120px); }
+
+        .sidebar { 
+            width: 320px; background: white; border-right: 2px solid #ddd; 
+            overflow-y: auto; padding: 10px;
+        }
+
+        .trade-btn { 
+            padding: 14px; border-bottom: 1px solid #eee; cursor: pointer; 
+            transition: 0.3s; font-size: 14px; color: var(--primary); font-weight: bold;
+        }
+        .trade-btn:hover { background: var(--secondary); color: black; border-radius: 8px; transform: translateX(5px); }
+        
+        /* Special Button Styles */
+        .doc-nav-btn { background: #7b1fa2; color: white !important; margin-top: 10px; border-radius: 8px; }
+        .doc-nav-btn:hover { background: #9c27b0; color: white; }
+        .feedback-btn { background: #d32f2f; color: white !important; margin-top: 10px; border-radius: 8px; }
+
+        .content { flex: 1; padding: 25px; overflow-y: auto; background: white; margin: 15px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        
+        .trade-image-grid { 
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .trade-image-item { 
+            width: 100%; 
+            height: 180px; 
+            object-fit: cover; 
+            border-radius: 10px; 
+            border: 3px solid white;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .info-card { background: var(--info-bg); padding: 25px; border-radius: 12px; border-top: 6px solid var(--primary); margin-bottom: 15px; }
+        .trade-info-text h2 { color: var(--primary); margin-top: 0; font-size: 26px; border-bottom: 3px solid var(--secondary); display: inline-block; padding-bottom: 5px; }
+        .trade-description { font-size: 17px; line-height: 1.8; color: #34495e; text-align: justify; }
+        
+        .form-container { max-width: 500px; margin: auto; padding: 20px; background: #fff; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        .form-container input, .form-container select, .form-container textarea { width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ccc; border-radius: 5px; box-sizing: border-box; }
+        .submit-btn { background: var(--primary); color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; width: 100%; font-size: 16px; font-weight: bold; }
+
+        .scope-box { background: var(--scope-bg); padding: 20px; border-radius: 10px; border-left: 6px solid #ff9800; margin-bottom: 15px; }
+        .doc-box-full { background: var(--doc-bg); padding: 30px; border-radius: 12px; border: 2px dashed #7b1fa2; }
+        .doc-list-styled { list-style: none; padding: 0; }
+        .doc-list-styled li { padding: 12px; margin-bottom: 8px; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); font-size: 18px; }
+        
+        .contact-box { background: var(--contact-bg); padding: 20px; border-radius: 10px; border-left: 6px solid #2e7d32; margin-bottom: 15px; }
+        .video-container { background: var(--video-bg); padding: 20px; border-radius: 10px; border: 2px solid #ddd; margin-top: 15px; text-align: center; }
+        video { width: 100%; max-width: 800px; border-radius: 8px; }
+
+        .welcome-screen { text-align: center; padding: 40px; }
+        .welcome-image { width: 100%; max-width: 800px; border-radius: 15px; }
+
+        @media (max-width: 768px) {
+            .main-container { flex-direction: column; height: auto; }
+            .sidebar { width: 100%; height: 250px; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>यशवंतराव केळकर शासकीय औद्योगिक प्रशिक्षण संस्था, पंढरपूर</h1>
+    <p>जुना कासेगांव रोड, पंढरपूर - 413304 | जिल्हा सोलापूर </p>
+</header>
+
+<div class="main-container">
+    <div class="sidebar">
+        <div class="trade-btn" onclick="showData(1)">1. Welder (वेल्डर)</div>
+        <div class="trade-btn" onclick="showData(2)">2. Welder (DST)</div>
+        <div class="trade-btn" onclick="showData(3)">3. COPA & Programming</div>
+        <div class="trade-btn" onclick="showData(4)">4. Mechanic Tractor</div>
+        <div class="trade-btn" onclick="showData(5)">5. Plumber (प्लंबर)</div>
+        <div class="trade-btn" onclick="showData(6)">6. Wood Work Tech.</div>
+        <div class="trade-btn" onclick="showData(7)">7. Mechanic Motor Vehicle</div>
+        <div class="trade-btn" onclick="showData(8)">8. Electrician (इलेक्ट्रिशिअन)</div>
+        <div class="trade-btn" onclick="showData(9)">9. Fitter (फिटर)</div>
+        <div class="trade-btn" onclick="showData(10)">10. Turner (टर्नर)</div>
+        <div class="trade-btn" onclick="showData(11)">11. Draughtsman Civil</div>
+        <div class="trade-btn" onclick="showData(12)">12. ICTSM</div>
+        <div class="trade-btn" onclick="showData(13)">13. Machinist (मशिनिस्ट)</div>
+        
+        <div class="trade-btn doc-nav-btn" onclick="showDocuments()">📄 आवश्यक कागदपत्रे (Documents)</div>
+        
+        <div class="trade-btn feedback-btn" onclick="showFeedback()">📝 Feedback Form (अभिप्राय)</div>
+    </div>
+
+    <div class="content" id="output">
+        <div class="welcome-screen">
+            <img src="IMG_20260117_113817.jpg" alt="ITI Building" class="welcome-image">
+            <h2>ITI पंढरपूर पोर्टलवर आपले स्वागत आहे!</h2>
+            <p>सविस्तर माहिती पाहण्यासाठी डावीकडील यादीतून ट्रेड निवडा.</p>
+        </div>
+    </div>
+</div>
+
+<script>
+    const tradeDetails = {
+        1: { n: "वेल्डर (Welder)", imgs: ["IMG-20260119-WA0074.jpg", "IMG-20260119-WA0071.jpg",], v: "VID-20260127-WA0005.mp4", d: "धातू जोडणे, आर्क, गॅस वेल्डिंग आणि फॅब्रिकेशनचे प्रशिक्षण दिले जाते.", s: "<b>उद्योग:</b> उत्पादन, बांधकाम, ऑटोमोबाईल, रेल्वे.", c: "श्री.सावंत / श्री.सुर्यवंशी - 9822603886" },
+        2: { n: "वेल्डर (DST)", imgs: ["IMG-20260119-WA0072.jpg", ], v: "VID-20260127-WA0006.mp4", d: "निमे प्रशिक्षण संस्थेत आणि निमे प्रशिक्षण थेट उद्योगांमध्ये दिले जाते.", s: "<b>क्षेत्र:</b> तेल आणि वायू, जहाज बांधणी, रेल्वे.", c: "श्री.सुर्यवंशी - 9970380318" },
+        3: { n: "COPA", imgs: ["IMG_20260120_144031.jpg", "IMG_20260130_102234.jpg", "IMG_20260130_102204.jpg"], v: "VID-20260130-WA0000.mp4", d: "संगणक हाताळणी, MS Office, डेटा एंट्री आणि वेब डिझायनिंग.", s: "<b>शासकीय:</b> रेल्वे, बँक; <b>खाजगी:</b> IT कंपन्या.", c: "श्री.पाटील - 9970794226" },
+        4: { n: "Mechanic Tractor", imgs: ["IMG-20260119-WA0021.jpg", "IMG-20260119-WA0019.jpg", ], v: "VID-20260119-WA0024.mp4", d: "ट्रॅक्टर आणि कृषी यंत्रसामग्रीच्या दुरुस्ती और देखभालीचे प्रशिक्षण.", s: "<b>कंपन्या:</b> महिंद्रा, स्वराज, जॉन डीअर.", c: "श्री.सावंत / श्री.आघम - 9168113319" },
+        5: { n: "प्लंबर (Plumber)", imgs: ["IMG-20260119-WA0008.jpg", ], v: "VID-20260119-WA0010.mp4", d: "पाणीपुरवठा आणि सांडपाणी व्यवस्थापनासाठी पाईप फिटिंगचे कौशल्य.", s: "<b>संधी:</b> रेल्वे, नगरपरिषद, रिअल इस्टेट.", c: "श्री.बिबे - 8983218117" },
+        6: { n: "Wood Work Tech.", imgs: ["IMG-20260119-WA0046.jpg", "IMG-20260119-WA0036.jpg",], v: "VID-20260119-WA0051.mp4", d: "आधुनिक फर्निचर बनवणे आणि लाकडी कामाचे तांत्रिक प्रशिक्षण.", s: "<b>संधी:</b> फर्निचर कंपन्या, इंटिरियर डिझाइन.", c: "श्री.भंडारी - 9545154893" },
+        7: { n: "Mechanic Motor Vehicle", imgs: ["IMG-20260120-WA0018.jpg", "IMG-20260120-WA0017.jpg", "IMG-20260120-WA0015.jpg"], v: "VID-20260127-WA0004.mp4", d: "वाहनांचे इंजिन, रचना आणि आधुनिक इलेक्ट्रिक वाहनांची दुरुस्ती.", s: "<b>सरकारी:</b> आर्मी, रेल्वे, ST महामंडळ.", c: "श्री.मगर / श्री.भोसले - 9673220690" },
+        8: { n: "इलेक्ट्रिशिअन (Electrician)", imgs: ["IMG-20260119-WA0063.jpg", "IMG-20260119-WA0058.jpg", "IMG-20260119-WA0060.jpg"], v: "VID-20260119-WA0066.mp4", d: "घरगुती आणि औद्योगिक वायरिंग, मोटार रिवाईंडिंगचे प्रशिक्षण.", s: "<b>शासकीय:</b> महावितरण, रेल्वे, DRDO.", c: "सौ.अनेराव मॅडम - 9850629607" },
+        9: { n: "फिटर (Fitter)", imgs: ["IMG-20260119-WA0014.jpg", "IMG-20260119-WA0015.jpg", ], v: "VID-20260127-WA0002.mp4", d: "यंत्रसामग्री जोडणे, बसवणे आणि अचूक दुरुस्ती करण्याचे ज्ञान.", s: "<b>संधी:</b> मॅन्युफॅक्चरिंग कंपन्या, टाटा मोटर्स.", c: "श्री.स्वामी / श्री.बुलबुले - 8600973979" },
+        10: { n: "टर्नर (Turner)", imgs: ["IMG-20260119-WA0004.jpg", ], v: "VID-20260119-WA0005.mp4", d: "लेथ मशीनवर धातू कापून विविध सुटे भाग तयार करण्याचे कौशल्य.", s: "<b>शासकीय:</b> ISRO, रेल्वे, ऑर्डनन्स फॅक्टरी.", c: "श्री.सातपुते - 8668905587" },
+        11: { n: "Draughtsman Civil", imgs: ["IMG-20260119-WA0006.jpg",], v: "VID-20260120-WA0019.mp4", d: "इमारतींचे नकाशे तयार करणे, AutoCAD आणि सिव्हिल इंजिनीअरिंग.", s: "<b>शासकीय:</b> PWD, महानगरपालिका, जिल्हा परिषद.", c: "श्री.मासाळ - 9860865160" },
+        12: { n: "ICTSM", imgs: ["IMG_20260120_144204.jpg", "IMG-20260130-WA0002.jpg", "IMG-20260130-WA0004.jpg"], v: "VID-20260130-WA0006.mp4", d: "संगणक हार्डवेअर, नेटवर्किंग और आयटी सिस्टीम मेंटेनन्स.", s: "<b>संधी:</b> आयटी कंपन्या, टेलिकॉम सेक्टर.", c: "श्री.पाटील - 9970794226" },
+        13: { n: "मशिनिस्ट (Machinist)", imgs: ["IMG-20260119-WA0013.jpg",], v: "VID-20260119-WA0011.mp4", d: "मिलिंग, ग्राइंडिंग आणि लेथ मशीनवर अचूक भाग तयार करणे.", s: "<b>शासकीय:</b> DRDO, ISRO, रेल्वे वर्कशॉप.", c: "श्री.कनसे - 9860884280" }
+    };
+
+    function showData(id) {
+        const item = tradeDetails[id];
+        const out = document.getElementById('output');
+
+        let imageGridHtml = '<div class="trade-image-grid">';
+        item.imgs.forEach(imgSrc => {
+            imageGridHtml += `<img src="${imgSrc}" class="trade-image-item" alt="${item.n}">`;
+        });
+        imageGridHtml += '</div>';
+
+        out.innerHTML = `
+            <div class="trade-display">
+                <div class="info-card">
+                    <div class="trade-info-text">
+                        <h2>${item.n}</h2>
+                        <p class="trade-description">${item.d}</p>
+                    </div>
+                    ${imageGridHtml}
+                </div>
+                <div class="scope-box">
+                    <h3>🎯 करिअर संधी आणि स्कोप:</h3>
+                    <p class="scope-list">${item.s}</p>
+                </div>
+                <div class="contact-box">
+                    <h3>📞 संपर्क:</h3>
+                    <p style="font-size: 18px;"><strong>शिक्षक:</strong> ${item.c}</p>
+                </div>
+                <div class="video-container">
+                    <h3>🎥 प्रॅक्टिकल व्हिडिओ पाहा</h3>
+                    <video controls>
+                        <source src="${item.v}" type="video/mp4">
+                    </video>
+                </div>
+            </div>`;
+    }
+
+    // Function to show Documents
+    function showDocuments() {
+        const out = document.getElementById('output');
+        out.innerHTML = `
+            <div class="doc-box-full">
+                <h2 style="color: var(--primary); text-align:center; border-bottom: 3px solid var(--secondary); padding-bottom:10px;">📄 प्रवेशासाठी आवश्यक कागदपत्रे</h2>
+                <p style="text-align:center; font-weight:bold;">(Admission Required Documents List)</p>
+                <ul class="doc-list-styled">
+                    <li>✅ १० वी / १२ वी गुणपत्रिका (Original Marksheet)</li>
+                    <li>✅ शाळा सोडल्याचा मूळ दाखला (L.C. / T.C.)</li>
+                    <li>✅ जातीचे प्रमाणपत्र (Caste Certificate) - मागासवर्गीय उमेदवारांसाठी</li>
+                    <li>✅ नॉन-क्रिमिलेअर प्रमाणपत्र (Non-Creamy Layer) - लागू असल्यास</li>
+                    <li>✅ अधिवास प्रमाणपत्र (Domicile Certificate)</li>
+                    <li>✅ आधार कार्ड झेरॉक्स (Aadhar Card)</li>
+                    <li>✅ उत्पन्नाचा दाखला (Income Certificate)</li>
+                    <li>✅ पासपोर्ट साईज फोटो (२ प्रति)</li>
+                    <li>✅ बँक पासबुक झेरॉक्स</li>
+                </ul>
+                <p style="margin-top:20px; color:red; font-weight:bold;">* टिप: वरील सर्व कागदपत्रांच्या मूळ प्रती व दोन साक्षांकित संच (Attested Sets) सोबत ठेवावेत.</p>
+            </div>`;
+    }
+
+    function showFeedback() {
+        const out = document.getElementById('output');
+        out.innerHTML = `
+            <div class="form-container">
+                <h2 style="color: var(--primary); text-align:center;">अभिप्राय फॉर्म (Feedback)</h2>
+                <form action="https://formspree.io/f/meekljrr" method="POST">
+                    <label>पूर्ण नाव (Full Name):</label>
+                    <input type="text" name="name" placeholder="तुमचे नाव लिहा" required>
+                    
+                    <label>ईमेल / मोबाईल नंबर:</label>
+                    <input type="text" name="contact" placeholder="तुमचा ईमेल किंवा मोबाईल लिहा" required>
+                    
+                    <label>लिंग (Gender):</label><br>
+                    <input type="radio" name="gender" value="Male" style="width:auto;"> पुरुष 
+                    <input type="radio" name="gender" value="Female" style="width:auto;"> महिला
+                    <br><br>
+
+                    <label>ट्रेड निवडा (Select Course):</label>
+                    <select name="course" required>
+                        <option value="">निवडा</option>
+                        <option value="Welder">Welder</option>
+                        <option value="COPA">COPA</option>
+                        <option value="Electrician">Electrician</option>
+                        <option value="Fitter">Fitter</option>
+                        <option value="Turner">Turner</option>
+                        <option value="Machinist">Machinist</option>
+                        <option value="Other">इतर</option>
+                    </select>
+
+                    <label>तुमचा संदेश/अभिप्राय (Message):</label>
+                    <textarea name="message" placeholder="तुमचा अभिप्राय किंवा शंका इथे लिहा..." required></textarea>
+
+                    <button type="submit" class="submit-btn">संदेश पाठवा (Submit)</button>
+                    <button type="reset" style="width:100%; margin-top:10px; padding:5px; cursor:pointer; border:1px solid #ddd; border-radius:5px;">पुन्हा भरा (Reset)</button>
+                </form>
+            </div>`;
+    }
+</script>
+</body>
+</html>
